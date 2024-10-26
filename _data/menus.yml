@@ -1,0 +1,27 @@
+main:
+  - name: "Get Started"
+    url: "/get-started/"
+    weight: 1
+  - name: "Model Zoo"
+    url: "/models/"
+    weight: 2
+  - name: "Projects"
+    url: "/gallery/"
+    weight: 3
+  - name: "Learn"
+    url: "/learn/"
+    weight: 4
+  - name: "Team"
+    url: "/team/"
+    weight: 5
+  - name: "Contact"
+    url: "/contact/"
+    weight: 6
+
+footer:
+  - name: "Home"
+    url: "/"
+    weight: 1
+  - name: "Contact"
+    url: "/contact/"
+    weight: 2

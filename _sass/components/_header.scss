@@ -1,0 +1,50 @@
+.header {
+  color: $primary;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // box-shadow: 0 1px 15px rgba(50, 50, 93, 0.2);
+  border-bottom: 1px solid $white-offset;
+  padding: 10px 0px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &.header-absolute {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+}
+.lock-scroll {
+  .header {
+    &.header-absolute {
+      position: static;
+    }
+  }
+}
+
+.header .logo a {
+  font-size: 22pt;
+  font-weight: bold;
+  color: black;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    text-emphasis: none;
+  }
+}
+
+.header .logo a span:last-child {
+  color: $primary;
+}
+
+.header .logo a span:last-child:hover {
+  color: $primary;
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Unified Inference API",
+    "description": "A single API for all your inference needs across frameworks and devices.",
+    "image": {
+      "url": "images/features/noun_branding_1885335.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Conversion Tools",
+    "description": "Convert your existing PyTorch models to ONNX and TFLite for deployment.",
+    "image": {
+      "url": "images/features/noun_The Process_1885341.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Deployment Engine",
+    "description": "We provide Python and Kotlin APIs for deploying your models to laptops and mobile devices.",
+    "image": {
+      "url": "images/features/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  }
+]

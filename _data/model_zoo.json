@@ -1,0 +1,606 @@
+[
+    {
+        "name": "Lightweight Pose Network",
+        "description": "Simple and Lightweight Human Pose Estimation",
+        "paper": "https://arxiv.org/abs/1911.10346",
+        "type": "body2d",
+        "variants": {
+            "50": {
+                "name": "LPN-50 (COCO)",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=13pzu7J6FJnroqG_lHibQyV5sA6aHuOwD",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1dldLwjOacXV_uGkbxfEIPPJEK_2A-Snp/view?usp=sharing",
+                "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/coco/lpn/lpn50_256x192_gd256x2_gc.yaml",
+                "license": "MIT License"
+            },
+            "101": {
+                "name": "LPN-101 (COCO)",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1ZX7DJKfimTt6p8GaH_0JHIH1h5sXh_aK",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1sMMgZreTwVsNSwgJDgkJ06wMIdpC5JjJ/view?usp=sharing",
+                "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/coco/lpn/lpn101_256x192_gd256x2_gc.yaml",
+                "license": "MIT License"
+            },
+            "152": {
+                "name": "LPN-152 (COCO)",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1xgZFPGg1kh0w2cgGwF7hbDiwBpltGoO2",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1yDSs58ZjG_M5JWonKQkVaFBsTqoUC-o5/view?usp=sharing",
+                "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/coco/lpn/lpn152_256x192_gd256x2_gc.yaml",
+                "license": "MIT License"
+            },
+            "50m": {
+                "name": "LPN-50 (MPII)",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1AwvdMTTEm5quwltcCofvfQ1EBDEp_C0Q",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1lQmpmbHyW-_tXIFpY3yraaQC83mF-sLf/view?usp=sharing",
+                "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/mpii/lpn/lpn50_256x256_gd256x2_gc.yaml",
+                "license": "MIT License"
+            }
+        }
+    },
+    {
+        "name": "BlazePose",
+        "description": "BlazePose is a lightweight model for human pose estimation tailored for real-time inference on mobile devices. It produces 33 body keypoints for a single person and runs at over 30 frames per second on a Pixel 2 phone.",
+        "paper": "https://arxiv.org/abs/2006.10204",
+        "type": "wholebody",
+        "variants": {
+            "lite": {
+                "name": "BlazePose-Lite",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "blazepose",
+                "format": "mediapipe",
+                "url": "https://drive.google.com/file/d/1lTYBuK2K70Od7c_UjJq33Ap3Wvt_5w9I/view?usp=sharing",
+                "source": "MediaPipe",
+                "source_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/latest/pose_landmarker_lite.task",
+                "code": "https://github.com/google/mediapipe",
+                "license": "Apache-2.0 License"
+            },
+            "full": {
+                "name": "BlazePose-Full",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "blazepose",
+                "format": "mediapipe",
+                "url": "https://drive.google.com/file/d/1ckRy3I5t_vRnPzTrMyl1Ou4UcIH64xiS/view?usp=sharing",
+                "source": "MediaPipe",
+                "source_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/latest/pose_landmarker_full.task",
+                "code": "https://github.com/google/mediapipe",
+                "license": "Apache-2.0 License"
+            },
+            "heavy": {
+                "name": "BlazePose-Heavy",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "blazepose",
+                "format": "mediapipe",
+                "url": "https://drive.google.com/file/d/1LnzU3vq9ezhf3KitNLkV8zkwtXxN8vf3/view?usp=sharing",
+                "source": "MediaPipe",
+                "source_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_heavy/float16/latest/pose_landmarker_heavy.task",
+                "code": "https://github.com/google/mediapipe",
+                "license": "Apache-2.0 License"
+            }
+        }
+    },
+    {
+        "name": "RTMPose",
+        "description": "RTMPose is a real-time multi-person pose estimation model which uses a CSPNeXt backbone with a lightweight SimCC head.",
+        "paper": "https://arxiv.org/abs/2303.07399",
+        "type": "body2d",
+        "variants": {
+            "t": {
+                "name": "RTMPose-t",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1txyOmtcAFLYa9qSzL-mheJlc5G6iQDjC",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-t-3f713b.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-t_8xb256-420e_aic-coco-256x192.py",
+                "license": "Apache-2.0 License"
+            },
+            "s": {
+                "name": "RTMPose-s",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1dc-yrbQ3oJldfBfCj54oyglO6njT5c78",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-s-903875.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-s_8xb256-420e_aic-coco-256x192.py",
+                "license": "Apache-2.0 License"
+            },
+            "m": {
+                "name": "RTMPose-m",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1na70j7QYud8N4-Pc-3xXS6WUe0NCSEPF",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-m-4d5988.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-m_8xb256-420e_aic-coco-256x192.py",
+                "license": "Apache-2.0 License"
+            },
+            "l": {
+                "name": "RTMPose-l",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1BKGaT4NS3q8KkkoeJX0SfpFEnRbdUKxC",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-l-059cd7.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
+                "license": "Apache-2.0 License"
+            },
+            "wm": {
+                "name": "RTMW-m",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco_wholebody",
+                "format": "onnx",
+                "url": "https://drive.google.com/file/d/1XolCPAIzPQDw55ANzKQ-nQVwfqZRoJdx/view?usp=drive_link",
+                "source": "MMPose",
+                "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmw/onnx_sdk/rtmw-dw-m-s_simcc-cocktail14_270e-256x192_20231122.zip",
+                "code": "https://github.com/open-mmlab/mmpose/blob/5a3be9451bdfdad2053a90dc1199e3ff1ea1a409/configs/wholebody_2d_keypoint/rtmpose/cocktail14/rtmw-m_8xb1024-270e_cocktail14-256x192.py",
+                "license": "Apache-2.0 License"
+            }
+        }
+    },
+    {
+        "name": "RTMDet",
+        "description": "detectors_rtmdet-nano_coco-person_320x320",
+        "paper": "https://arxiv.org/abs/2212.07784",
+        "type": "detectors",
+        "variants": {
+            "nano": {
+                "name": "RTMDet-nano",
+                "input_size": [
+                    320,
+                    320,
+                    3
+                ],
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1OeK7rlgPpbkyY5NEcqfaa2qT3ILubue-",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmdet-37adb8.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/projects/rtmpose/rtmdet/person/rtmdet_nano_320-8xb32_coco-person.py",
+                "license": "Apache-2.0 License"
+            },
+            "m": {
+                "name": "RTMDet-m",
+                "input_size": [
+                    640,
+                    640,
+                    3
+                ],
+                "format": "onnx",
+                "url": "https://drive.google.com/uc?id=1Wqs-vxaEUvUB8TweaoMVKctAlXeK9GSZ",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmdet-97037b.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/projects/rtmpose/rtmdet/person/rtmdet_m_640-8xb32_coco-person.py",
+                "license": "Apache-2.0 License"
+            }
+        }
+    },
+    {
+        "name": "MoveNet",
+        "description": "",
+        "paper": "https://arxiv.org/abs/1803.08225",
+        "type": "body2d",
+        "variants": {
+            "lightning": {
+                "name": "MoveNet Lightning",
+                "input_size": [
+                    192,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/file/d/17E_QH9_8bt_DCi2ey08CPDT3-AJGM81P/view?usp=sharing",
+                "source": "TensorFlow Hub",
+                "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
+                "code": "",
+                "license": "Apache 2.0 License"
+            },
+            "lightning16": {
+                "name": "MoveNet Lightning FP16",
+                "input_size": [
+                    192,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/file/d/1Th9y2AOdQVKhM9OJ65EIsgAHerDtxSpj/view?usp=sharing",
+                "source": "TensorFlow Hub",
+                "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
+                "code": "",
+                "license": "Apache 2.0 License"
+            },
+            "lightning8": {
+                "name": "MoveNet Lightning INT8",
+                "input_size": [
+                    192,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/file/d/1JbVRFrCvrmC8tE7VX7_v1AKqI12gEUVE/view?usp=sharing",
+                "source": "TensorFlow Hub",
+                "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
+                "code": "",
+                "license": "Apache 2.0 License"
+            },
+            "thunder": {
+                "name": "MoveNet Thunder",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/file/d/1NHIO9hU-8YLreT9TFyMqgjXJWWPMWNwi/view?usp=sharing",
+                "source": "TensorFlow Hub",
+                "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
+                "code": "",
+                "license": "Apache 2.0 License"
+            },
+            "thunder16": {
+                "name": "MoveNet Thunder FP16",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/file/d/1qzbwGjsZ-HHUmr3xFGHEUhsjrU2ewsZ8/view?usp=sharing",
+                "source": "TensorFlow Hub",
+                "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
+                "code": "",
+                "license": "Apache 2.0 License"
+            },
+            "thunder8": {
+                "name": "MoveNet Thunder Int8",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/file/d/1ZAhBmrm6zu7R1k1AknXT1dsXryu6UMjd/view?usp=drive_link",
+                "source": "TensorFlow Hub",
+                "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
+                "code": "",
+                "license": "Apache 2.0 License"
+            }
+        }
+    },
+    {
+        "name": "NASNet",
+        "description": "An efficient pose estimation model containing a NAS-searched backbone and a head with slim transposed convolutions and a spatial information correction module.",
+        "paper": "https://arxiv.org/abs/2012.07086",
+        "type": "body2d",
+        "variants": {
+            "a17": {
+                "name": "NASNet-A (COCO)",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1I72WYRxa2L_EtakSrQhrSBDdjfKZu6Dw",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1oNr8Ts5EdYwrvV0-COrkYxhmvbjgNwim/view?usp=drive_link",
+                "code": "https://github.com/hustvl/EfficientPose/blob/master/experiments/coco/efficientpose/nasnet_192x256_adam_lr1e-3_efficientpose-a.yaml",
+                "license": "Unknown Open Source License"
+            },
+            "b17": {
+                "name": "NASNet-B (COCO)",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1wmuudUy4-CDp8RiuBRnNbr0UTcGsqpuo",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1glmyuTcYNxmpivQM5ifF-1lSHUoxmUyP/view?usp=drive_link",
+                "code": "https://github.com/hustvl/EfficientPose/blob/master/experiments/coco/efficientpose/nasnet_192x256_adam_lr1e-3_efficientpose-b.yaml",
+                "license": "Unknown Open Source License"
+            },
+            "b16": {
+                "name": "NASNet-B (MPII)",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1sto7eqJoeFDwcu93g16c3KAd8Ggfcg6X",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1PER2gTZwBQ-KtuFyKVl7277sLuifKDK3/view?usp=drive_link",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
+                "license": "Unknown Open Source License"
+            },
+            "c17": {
+                "name": "NASNet-C (COCO)",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1qAr2fsarwe8uwHFX2tmRRSiKTYNkghfq",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1xUw1CEdiaDQ88vpB1V6rp4juUUoY73vt/view?usp=drive_link",
+                "code": "https://github.com/hustvl/EfficientPose/blob/master/experiments/coco/efficientpose/nasnet_192x256_adam_lr1e-3_efficientpose-c.yaml",
+                "license": "Unknown Open Source License"
+            },
+            "c16": {
+                "name": "NASNet-C (MPII)",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1X-NTpXx0eCV6I6agd1A35bYfpBEqxTLG",
+                "source": "Official Repo",
+                "source_url": "https://drive.google.com/file/d/1_UuDHAdzTctKjZtGCzRdwPocuF9yn1-1/view?usp=drive_link",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
+                "license": "Unknown Open Source License"
+            }
+        }
+    },
+    {
+        "name": "SimCC",
+        "description": "SimCC: a Simple Coordinate Classification Perspective for Human Pose Estimation",
+        "paper": "https://arxiv.org/abs/2107.03332",
+        "type": "body2d",
+        "variants": {
+            "mbv2": {
+                "name": "SimCC-mbv2",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/file/d/15zJIXQWH5Ui5h0PMcnCCZ2S4JNjCXZtc/view?usp=sharing",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/simcc-0d1bf8.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc0/configs/body_2d_keypoint/simcc/coco/simcc_mobilenetv2_wo-deconv-8xb64-210e_coco-256x192.py",
+                "license": "Apache-2.0 License"
+            },
+            "vipnas": {
+                "name": "SimCC-ViPNAS-MBV3",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/file/d/1ia4mkM5ATc2uran5WZWoSeP8N4Q4EWVA/view?usp=sharing",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/simcc-722a37.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc0/configs/body_2d_keypoint/simcc/coco/simcc_vipnas-mbv3_8xb64-210e_coco-256x192.py",
+                "license": "Apache-2.0 License"
+            },
+            "res50": {
+                "name": "SimCC-ResNet50",
+                "input_size": [
+                    256,
+                    192,
+                    3
+                ],
+                "keypoints": "coco",
+                "format": "onnx",
+                "url": "https://drive.google.com/file/d/1tiLlu6T9JQNYVCev-YDterG8UUfrnIiL/view?usp=sharing",
+                "source": "MMDeploy",
+                "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/simcc-fefdab.onnx",
+                "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc0/configs/body_2d_keypoint/simcc/coco/simcc_res50_8xb64-210e_coco-256x192.py",
+                "license": "Apache-2.0 License"
+            }
+        }
+    },
+    {
+        "name": "EfficientPose",
+        "description": "A family of EfficientNet-based single-person pose estimation networks trained on MPII keypoints with different trade-offs between accuracy and efficiency.",
+        "paper": "https://arxiv.org/abs/2004.12186",
+        "authors": "Daniel Groos, Heri Ramampiaro, Espen A. F. Ihlen",
+        "year": "2020",
+        "type": "body2d",
+        "variants": {
+            "rt": {
+                "name": "EfficientPose-RT",
+                "input_size": [
+                    224,
+                    224,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1H_tWXQUWPEELbU2rDaG6e4Oa3aX2E_-t",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseRT.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "rt_lite": {
+                "name": "EfficientPose-RT-Lite",
+                "input_size": [
+                    224,
+                    224,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=13SQSQUf6B-s_2EcDjTDRNy1Hq7tIMxFy",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseRT_LITE.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "i": {
+                "name": "EfficientPose-I",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=17hqzQUNeBCV7qHjzirBteygwBKQNVcmA",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseI.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "i_lite": {
+                "name": "EfficientPose-I-Lite",
+                "input_size": [
+                    256,
+                    256,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1N33Js3JwaApd1SvZLZIYdkBH43WzA5tc",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseI_LITE.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "ii": {
+                "name": "EfficientPose-II",
+                "input_size": [
+                    368,
+                    368,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1oAyJuuyKPellwDL9evualaG3FXaaAthl",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseII.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "ii_lite": {
+                "name": "EfficientPose-II-Lite",
+                "input_size": [
+                    368,
+                    368,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1o-AYZMejDddJ8ELjtN_Xb6r7tcp9O0Kq",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseII_LITE.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "iii": {
+                "name": "EfficientPose-III",
+                "input_size": [
+                    480,
+                    480,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1b7BdOyhdOmCARq3xqacQTy6hs-eUx85v",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseIII.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            },
+            "iv": {
+                "name": "EfficientPose-IV",
+                "input_size": [
+                    600,
+                    600,
+                    3
+                ],
+                "keypoints": "mpii",
+                "format": "tflite",
+                "url": "https://drive.google.com/uc?id=1vMELKDkF-pogSgOi1XrgMm7Vjn0iGXG3",
+                "source": "Official Repo",
+                "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseIV.tflite",
+                "code": "https://github.com/daniegr/EfficientPose",
+                "license": "Apache 2.0 License"
+            }
+        }
+    }
+]
