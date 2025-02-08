@@ -3,31 +3,49 @@ layout: default
 bodyClass: "page-home"
 ---
 
+<style>
+  .header {
+    background: transparent;
+    border: 0;
+  }
+  .logo,
+  .logo-mobile {
+    visibility: hidden;
+  }
+</style>
+
 <div class="intro">
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-        {{ content }}
-        {% if page.show_call_box %}
-          {% include call.html show_button=true %}
-        {% endif %}
+    <div class="row justify-content-center" style="text-align: center;">
+      <p>
+        <img src="{{ site.baseurl }}/images/logo/logo-dark.svg" alt="PocketPose" height="64" />
+      </p>
 
-        <p class="pt-1" style="color: darkgray;">
-          <small>PocketPose provides a unified interface for performing inference on a <a href="/models">range of pose estimation models</a>,
-             and includes tools for converting and optimizing models for mobile deployment.</small>
-        </p>
-      </div>
-      {% if page.intro_image %}
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
-      </div>
-      {% endif %}
+      {{ content }}
+
+      <p class="pt-2 col-12 col-md-8">
+        <img src="{{ site.baseurl }}/assets/images/getting-started.gif" alt="Getting Started" width="100%" />
+      </p>
+
+      <p class="col-12 col-md-8">
+          Develop interactive applications, sports analysis tools, or creative motion-powered experiences with our lightweight library that integrates seamlessly into your project.
+      </p>
+
+      <p class="col-md-8">
+        <a href="/get-started/" class="button button-secondary">Get Started Now</a>
+      </p>
+
+      <p class="pt-2 col-12 col-md-8">
+        <small>
+          PocketPose takes care of real-time motion estimation, so you can focus on building what matters. <em>Available in Python, JavaScript, and Kotlin</em>.
+        </small>
+    </p>
     </div>
   </div>
 </div>
 
 {% if site.data.features %}
-<div class="strip strip-grey">
+<div class="strip strip-diagonal">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
     <div class="row justify-content-center">
 
@@ -35,7 +53,8 @@ bodyClass: "page-home"
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="feature">
           {% if feature.image %}
-          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
+          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}"
+              width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
           {% endif %}
           <h2 class="feature-title">{{ feature.title }}</h2>
           <div class="feature-content">{{ feature.description }}</div>
@@ -48,45 +67,21 @@ bodyClass: "page-home"
 </div>
 {% endif %}
 
-<!-- <div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
-    <div class="row justify-content-start">
-      {% assign limit = site.home.limit_products | default: 6 %}
-      {% for service in site.products limit: limit %}
-      <div class="col-12 col-md-4 mb-1">
-        <div class="service service-summary">
-          <div class="service-content">
-            <h2 class="service-title">
-              <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
-            </h2>
-            <p>{{ service.content | markdownify | strip_html | truncate: 100 }}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a class="button button-primary" href="{{ "products" | relative_url }}">View All Products</a>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<h2>Citation</h2>
-
-If you find PocketPose useful in your research, please consider citing the following paper:
-
-<pre>
-<code class="language-bibtex">
-@misc{khan2023pocketpose,
-      title={PocketPose: Real-Time Human Pose Estimation on Mobile Devices - A Comprehensive Study}, 
-      author={Muhammad Saif Ullah Khan},
-      year={2023},
-      journal={arXiv preprint arXiv:2103.16345},
-      eprint={2103.16345},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-</code>
-</pre>
+<div class="container">
+    <h2>Citation</h2>
+    <p>
+      If you find PocketPose useful in your research, please consider citing the following paper:
+    </p>
+    <pre class="citation-block">
+    <code class="language-bibtex">
+    @misc{khan2023pocketpose,
+          title={PocketPose: Real-Time Human Pose Estimation on Mobile Devices - A Comprehensive Study}, 
+          author={Muhammad Saif Ullah Khan},
+          year={2023},
+          journal={arXiv preprint arXiv:2103.16345},
+          eprint={2103.16345},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV}
+    }</code>
+    </pre>
+</div>

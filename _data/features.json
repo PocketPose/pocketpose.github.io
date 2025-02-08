@@ -1,7 +1,7 @@
 [
   {
-    "title": "Unified Inference API",
-    "description": "A single API for all your inference needs across frameworks and devices.",
+    "title": "Effortless Integration",
+    "description": "No need to be an expert in pose estimation. Just plug in PocketPose and start using body, hand, and face motion data instantly.",
     "image": {
       "url": "images/features/noun_branding_1885335.svg",
       "width": 80,
@@ -9,8 +9,8 @@
     }
   },
   {
-    "title": "Conversion Tools",
-    "description": "Convert your existing PyTorch models to ONNX and TFLite for deployment.",
+    "title": "Optimized Performance",
+    "description": "Designed for mobile and edge devices, ensuring smooth real-time inference without heavy computational requirements.",
     "image": {
       "url": "images/features/noun_The Process_1885341.svg",
       "width": 80,
@@ -18,8 +18,8 @@
     }
   },
   {
-    "title": "Deployment Engine",
-    "description": "We provide Python and Kotlin APIs for deploying your models to laptops and mobile devices.",
+    "title": "Built for Developers",
+    "description": "Simple APIs, clear documentation, and an active community to help you bring motion-powered features to your users faster.",
     "image": {
       "url": "images/features/noun_3d modeling_1885342.svg",
       "width": 80,
