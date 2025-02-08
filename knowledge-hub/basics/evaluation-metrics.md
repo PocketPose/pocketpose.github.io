@@ -1,9 +1,10 @@
 ---
-title: Evaluation Metrics
+title: Standard Evaluation Metrics
+subtitle: "Measuring Pose Estimation Performance with Confidence"
 layout: tutorial
-description: Learn about the different evaluation metrics used in the field of Human Pose Estimation.
-parent: Advanced Topics
-order: 3
+description: "Discover the key evaluation metrics—like PCK, MPJPE, and AUC—used to assess the accuracy and reliability of pose estimation models."
+parent: Basic Concepts
+order: 5
 ---
 
 This page contains a list of common evaluation metrics used in the field of human pose estimation.

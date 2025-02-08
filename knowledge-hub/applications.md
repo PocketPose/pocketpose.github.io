@@ -2,7 +2,7 @@
 title: Applications of Human Pose Estimation
 layout: tutorial
 description: Human Pose Estimation is used in a variety of real-world applications in HCI, AR/VR, and more.
-parent: Learn Human Pose Estimation
+parent: "Knowledge Hub: Master Human Pose Estimation"
 order: 3
 ---
 

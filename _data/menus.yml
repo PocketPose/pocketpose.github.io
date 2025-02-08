@@ -8,15 +8,12 @@ main:
   - name: "Projects"
     url: "/gallery/"
     weight: 3
-  - name: "Learn"
-    url: "/learn/"
+  - name: "Knowledge Hub"
+    url: "/knowledge-hub/"
     weight: 4
-  - name: "Team"
+  - name: "About Us"
     url: "/team/"
     weight: 5
-  - name: "Contact"
-    url: "/contact/"
-    weight: 6
 
 footer:
   - name: "Home"

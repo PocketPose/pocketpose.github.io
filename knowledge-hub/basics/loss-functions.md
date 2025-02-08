@@ -1,10 +1,14 @@
 ---
-title: Loss Functions
+title: Common Loss Functions for Pose Estimation
 layout: tutorial
-description: Learn about the different loss functions used in Human Pose Estimation.
-parent: Advanced Topics
-order: 2
+subtitle: "Key Loss Functions for Training Accurate Pose Models"
+description: "Understand essential loss functions, such as MSE, L1, and heatmap-based losses, used to optimize pose estimation networks."
+parent: Basic Concepts
+order: 4
 ---
+
+Understand essential loss functions, such as MSE, L1, and heatmap-based losses, used to optimize pose estimation networks.
+
 
 This page contains a list of loss functions commonly used for human pose estimation.
 
@@ -19,6 +23,3 @@ MSE = \frac{1}{N}\sum_{i=1}^{N} (y_i - \hat{y}_i)^2
 $$
 
 where $N$ is the number of samples, $y_i$ is the ground truth coordinate and $\hat{y}_i$ is the predicted coordinate.
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

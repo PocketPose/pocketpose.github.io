@@ -1,12 +1,46 @@
-.page-service {
+.service-single {
+  padding: 16px;
+  margin-top: 16px;
+  background-color: #fbf7f1;
+  border: 2px solid lighten($black, 60%);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba($primary-dark, 0.4);
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: $black;
+  }
+  .h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: $black;
+  }
+  .h3 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: $black;
+  }
+  .title {
+
+  }
   .content {
     > p {
       &:first-of-type {
-        font-size: 1.6rem;
-        line-height: 1.4;
-        margin-bottom: 40px;
+        font-size: 1rem;
+        line-height: 1.2;
         font-weight: regular;
-        color: rgb(104, 104, 104);
+        color: $black;
       }
     }
   }

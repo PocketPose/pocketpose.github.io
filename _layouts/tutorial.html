@@ -1,14 +1,22 @@
 ---
 layout: default
 bodyClass: "page-basic"
+hide_children: false
 ---
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 {% assign tutorials = site.pages | where: "layout", "tutorial" %}
 {% assign children = tutorials | where: "parent", page.title | sort: "order" %}
 
 <div class="container pb-2 pt-2 pb-md-4 pt-md-4">
     <div class="row justify-content-start">
+        {% if page.intro_image %}
         <div class="col-12 col-md-8 col-lg-7 order-2 order-md-1">
+        {% else %}
+        <div class="col-12 col-md-12 col-lg-10 order-2 order-md-1">
+        {% endif %}
             <!-- Build breadcrumbs array -->
             {% assign breadcrumbs = "" | split: "" %}
             {% assign current_page = page %}
@@ -40,15 +48,19 @@ bodyClass: "page-basic"
     </div>
 </div>
 
+{% unless page.hide_children %}
 <div class="container pb-2 pb-md-4">
   <div class="row">
     {% for tutorial in children %}
-    <div class="col-12 col-md-6 mb-3">
+    <div class="col-12 col-md-4 mb-3">
       <div class="service service-summary">
         <div class="service-content">
           <h2 class="service-title">
             <a href={{ tutorial.url }}>{{ tutorial.title }}</a>
           </h2>
+          {% if tutorial.subtitle %}
+          <em class="service-subtitle">{{ tutorial.subtitle }}</em>
+          {% endif %}
           <p>{{ tutorial.description }} </p>
         </div>
       </div>
@@ -56,3 +68,4 @@ bodyClass: "page-basic"
     {% endfor %}
   </div>
 </div>
+{% endunless %}
