@@ -4,13 +4,14 @@
 // Colors
 $primary: #12c2e9;
 $primary-dark: #1565C0;
-$secondary: rgb(6, 58, 109);
-$tertiary: #FF0099;
-$tertiary-dark: #493240;
-$black: #2f2f41;
-$white: #ffffff;
-$white-offset: #f6fdff;
-$steel: #5c5a5a;
+$secondary: #DE3412; // PyTorch red
+$secondary-dark: #B92B0F;
+$tertiary: #CC2F90;
+$tertiary-dark: #812CE5;
+$black: #262626;
+$white: #FFFFFF;
+$white-offset: #F6F6F6;
+$steel: #666666;
 
 // Links
 $link-color: $primary;
@@ -57,6 +58,7 @@ $sub-footer-text-color: $white;
 @import "components/strip";
 @import "components/feature";
 @import "components/social";
+@import "components/models";
 // @import "components/fonts"; // Uncomment this line to self host font
 
 // Pages

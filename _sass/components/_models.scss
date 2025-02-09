@@ -1,0 +1,106 @@
+$model-padding: 8px;
+$model-margin: 8px;
+$model-gap: 8px;
+$model-radius: 10px;
+
+.model-selector {
+    width: 100%;
+    margin: auto;
+}
+
+.model-selector .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $model-gap;
+    margin-bottom: $model-margin;
+}
+
+.selector-header {
+    flex: 1;
+    min-width: 150px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.options-grid {
+    flex: 4;
+    display: flex;
+    width: 100%;
+    gap: $model-gap;
+}
+
+.option {
+    flex: 1;
+    padding: $model-padding;
+    border-radius: 0px;
+    cursor: pointer;
+    background: lighten($black, 70%);
+    text-align: center;
+    transition: background 0.2s ease-in-out;
+}
+
+.option.install-command {
+    font-family: monospace;
+    min-height: 100px;
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.option.selected {
+    background: $secondary;
+    color: $white;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .selector-header {
+        width: 100%;
+        text-align: left;
+    }
+
+    .options-grid {
+        flex-direction: column;
+        gap: $model-gap / 2;
+    }
+
+    .option {
+        width: 100%;
+    }
+}
+
+.filter-container {
+    margin-bottom: $model-margin * 2;
+}
+
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $model-gap / 2;
+}
+
+.chip-container .chip {
+    background: lighten($black, 70%);
+    padding: $model-padding / 2 $model-padding;
+    border-radius: $model-radius;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.chip-container .chip.selected {
+    background: $secondary;
+    color: $white;
+}
+
+.model-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}

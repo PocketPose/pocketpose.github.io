@@ -4,8 +4,6 @@ bodyClass: "page-basic"
 hide_children: false
 ---
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 {% assign tutorials = site.pages | where: "layout", "tutorial" %}
 {% assign children = tutorials | where: "parent", page.title | sort: "order" %}
