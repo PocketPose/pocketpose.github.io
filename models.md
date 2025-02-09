@@ -40,28 +40,29 @@ For instructions on the latest models, visit our [Get Started](/get-started) pag
             <th>Input Size</th>
             <th>Keypoints</th>
             <th>Format</th>
-            <th>Download</th>
-            <th>Original Model</th>
-            <th>Code</th>
+            <!-- <th>Download</th> -->
+            <th>Source</th>
             <th>License</th>
           </tr>
         </thead>
         <tbody>
-          {% for model in site.data.model_zoo %}
-          {% for variant in model.variants %}
-          <tr class="model-card-container" data-framework="{{ variant[1].format }}" data-keypoints="{{ variant[1].keypoints }}">
-            <td>{{ variant[1].name }}</td>
-            <td>{{ variant[1].input_size | join: 'x' }}</td>
-            <td>{{ variant[1].keypoints }}</td>
-            <td>{{ variant[1].format }}</td>
-            <td><a href="{{ variant[1].url }}" class="btn btn-primary" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a></td>
-            <td><a href="{{ variant[1].source_url }}" target="_blank" class="btn btn-secondary" title="Original Model"><i class="fa-solid fa-square-arrow-up-right"></i></a></td>
-            <td><a href="{{ variant[1].code }}" target="_blank" class="btn btn-info" title="Code"><i class="fa-brands fa-github"></i></a></td>
-            <td>{{ variant[1].license }}</td>
-          </tr>
-          {% endfor %}
-          {% endfor %}
-        </tbody>
+          {% assign sorted_models = site.data.model_zoo | sort: "name" %}
+          {% for model in sorted_models %}
+            {% for variant in model.variants %}
+            <tr class="model-card-container" data-framework="{{ variant[1].format }}" data-keypoints="{{ variant[1].keypoints }}">
+              <td>{{ variant[1].name }}</td>
+              <td>{{ variant[1].input_size | join: 'x' }}</td>
+              <td>{{ variant[1].keypoints | upcase }}</td>
+              <td>{{ variant[1].format | upcase }}</td>
+              <!-- <td><a href="{{ variant[1].url }}" class="btn btn-primary" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a></td> -->
+              <td>
+                <a href="{{ variant[1].code }}" target="_blank" title="Source Code">Code</a> &middot;
+                <a href="{{ variant[1].source_url }}" target="_blank" title="Source Weights">Weights</a>
+              </td>
+              <td>{{ variant[1].license }}</td>
+            </tr>
+            {% endfor %}
+          {% endfor %}    </tbody>
       </table>
     </div>
   </div>

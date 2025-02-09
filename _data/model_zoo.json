@@ -18,7 +18,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1dldLwjOacXV_uGkbxfEIPPJEK_2A-Snp/view?usp=sharing",
                 "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/coco/lpn/lpn50_256x192_gd256x2_gc.yaml",
-                "license": "MIT License"
+                "license": "MIT"
             },
             "101": {
                 "name": "LPN-101 (COCO)",
@@ -33,7 +33,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1sMMgZreTwVsNSwgJDgkJ06wMIdpC5JjJ/view?usp=sharing",
                 "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/coco/lpn/lpn101_256x192_gd256x2_gc.yaml",
-                "license": "MIT License"
+                "license": "MIT"
             },
             "152": {
                 "name": "LPN-152 (COCO)",
@@ -48,7 +48,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1yDSs58ZjG_M5JWonKQkVaFBsTqoUC-o5/view?usp=sharing",
                 "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/coco/lpn/lpn152_256x192_gd256x2_gc.yaml",
-                "license": "MIT License"
+                "license": "MIT"
             },
             "50m": {
                 "name": "LPN-50 (MPII)",
@@ -63,7 +63,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1lQmpmbHyW-_tXIFpY3yraaQC83mF-sLf/view?usp=sharing",
                 "code": "https://github.com/zhang943/lpn-pytorch/blob/master/experiments/mpii/lpn/lpn50_256x256_gd256x2_gc.yaml",
-                "license": "MIT License"
+                "license": "MIT"
             }
         }
     },
@@ -86,7 +86,7 @@
                 "source": "MediaPipe",
                 "source_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/latest/pose_landmarker_lite.task",
                 "code": "https://github.com/google/mediapipe",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "full": {
                 "name": "BlazePose-Full",
@@ -101,7 +101,7 @@
                 "source": "MediaPipe",
                 "source_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/latest/pose_landmarker_full.task",
                 "code": "https://github.com/google/mediapipe",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "heavy": {
                 "name": "BlazePose-Heavy",
@@ -116,7 +116,7 @@
                 "source": "MediaPipe",
                 "source_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_heavy/float16/latest/pose_landmarker_heavy.task",
                 "code": "https://github.com/google/mediapipe",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             }
         }
     },
@@ -139,7 +139,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-t-3f713b.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-t_8xb256-420e_aic-coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "s": {
                 "name": "RTMPose-s",
@@ -154,7 +154,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-s-903875.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-s_8xb256-420e_aic-coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "m": {
                 "name": "RTMPose-m",
@@ -169,7 +169,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-m-4d5988.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-m_8xb256-420e_aic-coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "l": {
                 "name": "RTMPose-l",
@@ -184,7 +184,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-l-059cd7.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "wm": {
                 "name": "RTMW-m",
@@ -199,7 +199,7 @@
                 "source": "MMPose",
                 "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmw/onnx_sdk/rtmw-dw-m-s_simcc-cocktail14_270e-256x192_20231122.zip",
                 "code": "https://github.com/open-mmlab/mmpose/blob/5a3be9451bdfdad2053a90dc1199e3ff1ea1a409/configs/wholebody_2d_keypoint/rtmpose/cocktail14/rtmw-m_8xb1024-270e_cocktail14-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             }
         }
     },
@@ -221,7 +221,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmdet-37adb8.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/projects/rtmpose/rtmdet/person/rtmdet_nano_320-8xb32_coco-person.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "m": {
                 "name": "RTMDet-m",
@@ -235,7 +235,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmdet-97037b.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/projects/rtmpose/rtmdet/person/rtmdet_m_640-8xb32_coco-person.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             }
         }
     },
@@ -258,7 +258,7 @@
                 "source": "TensorFlow Hub",
                 "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
                 "code": "",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "lightning16": {
                 "name": "MoveNet Lightning FP16",
@@ -273,7 +273,7 @@
                 "source": "TensorFlow Hub",
                 "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
                 "code": "",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "lightning8": {
                 "name": "MoveNet Lightning INT8",
@@ -288,7 +288,7 @@
                 "source": "TensorFlow Hub",
                 "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
                 "code": "",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "thunder": {
                 "name": "MoveNet Thunder",
@@ -303,7 +303,7 @@
                 "source": "TensorFlow Hub",
                 "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
                 "code": "",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "thunder16": {
                 "name": "MoveNet Thunder FP16",
@@ -318,7 +318,7 @@
                 "source": "TensorFlow Hub",
                 "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
                 "code": "",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "thunder8": {
                 "name": "MoveNet Thunder Int8",
@@ -333,7 +333,7 @@
                 "source": "TensorFlow Hub",
                 "source_url": "https://storage.googleapis.com/download.tensorflow.org/models/tflite/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite",
                 "code": "",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             }
         }
     },
@@ -356,7 +356,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1oNr8Ts5EdYwrvV0-COrkYxhmvbjgNwim/view?usp=drive_link",
                 "code": "https://github.com/hustvl/EfficientPose/blob/master/experiments/coco/efficientpose/nasnet_192x256_adam_lr1e-3_efficientpose-a.yaml",
-                "license": "Unknown Open Source License"
+                "license": "Unspecified"
             },
             "b17": {
                 "name": "NASNet-B (COCO)",
@@ -371,7 +371,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1glmyuTcYNxmpivQM5ifF-1lSHUoxmUyP/view?usp=drive_link",
                 "code": "https://github.com/hustvl/EfficientPose/blob/master/experiments/coco/efficientpose/nasnet_192x256_adam_lr1e-3_efficientpose-b.yaml",
-                "license": "Unknown Open Source License"
+                "license": "Unspecified"
             },
             "b16": {
                 "name": "NASNet-B (MPII)",
@@ -386,7 +386,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1PER2gTZwBQ-KtuFyKVl7277sLuifKDK3/view?usp=drive_link",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
-                "license": "Unknown Open Source License"
+                "license": "Unspecified"
             },
             "c17": {
                 "name": "NASNet-C (COCO)",
@@ -401,7 +401,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1xUw1CEdiaDQ88vpB1V6rp4juUUoY73vt/view?usp=drive_link",
                 "code": "https://github.com/hustvl/EfficientPose/blob/master/experiments/coco/efficientpose/nasnet_192x256_adam_lr1e-3_efficientpose-c.yaml",
-                "license": "Unknown Open Source License"
+                "license": "Unspecified"
             },
             "c16": {
                 "name": "NASNet-C (MPII)",
@@ -416,7 +416,7 @@
                 "source": "Official Repo",
                 "source_url": "https://drive.google.com/file/d/1_UuDHAdzTctKjZtGCzRdwPocuF9yn1-1/view?usp=drive_link",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
-                "license": "Unknown Open Source License"
+                "license": "Unspecified"
             }
         }
     },
@@ -439,7 +439,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/simcc-0d1bf8.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc0/configs/body_2d_keypoint/simcc/coco/simcc_mobilenetv2_wo-deconv-8xb64-210e_coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "vipnas": {
                 "name": "SimCC-ViPNAS-MBV3",
@@ -454,7 +454,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/simcc-722a37.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc0/configs/body_2d_keypoint/simcc/coco/simcc_vipnas-mbv3_8xb64-210e_coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             },
             "res50": {
                 "name": "SimCC-ResNet50",
@@ -469,7 +469,7 @@
                 "source": "MMDeploy",
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/simcc-fefdab.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc0/configs/body_2d_keypoint/simcc/coco/simcc_res50_8xb64-210e_coco-256x192.py",
-                "license": "Apache-2.0 License"
+                "license": "Apache-2.0"
             }
         }
     },
@@ -494,7 +494,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseRT.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "rt_lite": {
                 "name": "EfficientPose-RT-Lite",
@@ -509,7 +509,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseRT_LITE.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "i": {
                 "name": "EfficientPose-I",
@@ -524,7 +524,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseI.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "i_lite": {
                 "name": "EfficientPose-I-Lite",
@@ -539,7 +539,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseI_LITE.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "ii": {
                 "name": "EfficientPose-II",
@@ -554,7 +554,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseII.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "ii_lite": {
                 "name": "EfficientPose-II-Lite",
@@ -569,7 +569,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseII_LITE.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "iii": {
                 "name": "EfficientPose-III",
@@ -584,7 +584,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseIII.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             },
             "iv": {
                 "name": "EfficientPose-IV",
@@ -599,7 +599,7 @@
                 "source": "Official Repo",
                 "source_url": "https://github.com/daniegr/EfficientPose/blob/master/models/tflite/EfficientPoseIV.tflite",
                 "code": "https://github.com/daniegr/EfficientPose",
-                "license": "Apache 2.0 License"
+                "license": "Apache-2.0"
             }
         }
     }

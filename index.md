@@ -5,5 +5,5 @@ description: PocketPose is an open-source framework designed for real-time pose 
 show_call_box: true
 ---
 
-## Motion-Driven Experiences Now in Your Pocket
+__Motion-Driven Experiences Now in Your Pocket__
 
