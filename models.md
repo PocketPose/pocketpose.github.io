@@ -1,70 +1,72 @@
 ---
 title: "🚀 PocketPose Model Zoo – Pre-Trained Models for Human Pose Estimation"
-layout: products
+layout: page
 description: "Explore PocketPose Model Zoo – a collection of pre-trained models for human pose estimation optimized for various frameworks and keypoint formats. Perfect for developers and researchers looking to accelerate their pose estimation projects."
 permalink: "/models/"
 ---
 
-# PocketPose Model Zoo – Optimized Pre-Trained Models for Pose Estimation
-
 The __PocketPose Model Zoo__ is your go-to resource for __pre-trained models__ designed for fast, accurate, and efficient __human pose estimation__ across different frameworks and keypoint formats. Whether you’re building real-time applications or conducting advanced research, our models help you __accelerate development__ and __improve accuracy__ without the heavy lifting of training from scratch.
+
+For instructions on the latest models, visit our [Get Started](/get-started) page. 
 
 __For Researchers &amp; Developers:__ In addition to our latest high-performance models, we provide access to __legacy pose estimation models__ that have played a pivotal role in the evolution of the field. While these models may not be optimized for speed or accuracy, they remain valuable for __comparative research, benchmarking, and academic exploration__.
 {: .note}
 
-For instructions on the latest models, visit our [Get Started](/get-started) page. If you’re looking for a specific model for research or development, use the model explorer below to find the right model for your needs.
+## Model Explorer
 
-<div class="container p-2 mb-4">
-  <div class="row">
-    <!-- Dropdowns for Filtering -->
-    <div class="filter-container">
-      <div>
-        <label>Backend:</label>
-        <div id="frameworkChips" class="chip-container"></div>
-      </div>
-      <div>
-        <label class="mt-2">Skeleton:</label>
-        <div id="keypointsChips" class="chip-container"></div>
-      </div>
-      <div>
-        <label class="mt-2">License:</label>
-        <div id="licenseChips" class="chip-container"></div>
-      </div>
-    </div>
-    <!-- Models Display -->
-    <div id="modelContainer">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Input Size</th>
-            <th>Keypoints</th>
-            <th>Format</th>
-            <!-- <th>Download</th> -->
-            <th>Source</th>
-            <th>License</th>
+If you’re looking for a specific model for research or development, use the filters below to find the right model for your needs.
+
+<div class="container model-selector filter-container">
+  <!-- Dropdowns for Filtering -->
+  <div class="row px-2">
+    <label class="selector-header">Backend:</label>
+    <div id="frameworkChips" class="options-grid chip-container"></div>
+  </div>
+  <div class="row px-2">
+    <label class="selector-header">Skeleton:</label>
+    <div id="keypointsChips" class="options-grid chip-container"></div>
+  </div>
+  <div class="row px-2">
+    <label class="selector-header">License:</label>
+    <div id="licenseChips" class="options-grid chip-container"></div>
+  </div>
+
+  <!-- Models Display -->
+  <div id="modelContainer" class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <caption>
+        <span id="modelCount" style="font-weight: bold;"></span>
+      </caption>
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Input Size</th>
+          <th>Keypoints</th>
+          <th>Format</th>
+          <!-- <th>Download</th> -->
+          <th>Source</th>
+          <th>License</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign sorted_models = site.data.model_zoo | sort: "name" %}
+        {% for model in sorted_models %}
+          {% for variant in model.variants %}
+          <tr class="model-card-container" data-framework="{{ variant[1].format }}" data-keypoints="{{ variant[1].keypoints }}">
+            <td>{{ variant[1].name }}</td>
+            <td>{{ variant[1].input_size | join: 'x' }}</td>
+            <td>{{ variant[1].keypoints | upcase }}</td>
+            <td>{{ variant[1].format | upcase }}</td>
+            <!-- <td><a href="{{ variant[1].url }}" class="btn btn-primary" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a></td> -->
+            <td>
+              <a href="{{ variant[1].code }}" target="_blank" title="Source Code">Code</a> &middot;
+              <a href="{{ variant[1].source_url }}" target="_blank" title="Source Weights">Weights</a>
+            </td>
+            <td>{{ variant[1].license }}</td>
           </tr>
-        </thead>
-        <tbody>
-          {% assign sorted_models = site.data.model_zoo | sort: "name" %}
-          {% for model in sorted_models %}
-            {% for variant in model.variants %}
-            <tr class="model-card-container" data-framework="{{ variant[1].format }}" data-keypoints="{{ variant[1].keypoints }}">
-              <td>{{ variant[1].name }}</td>
-              <td>{{ variant[1].input_size | join: 'x' }}</td>
-              <td>{{ variant[1].keypoints | upcase }}</td>
-              <td>{{ variant[1].format | upcase }}</td>
-              <!-- <td><a href="{{ variant[1].url }}" class="btn btn-primary" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a></td> -->
-              <td>
-                <a href="{{ variant[1].code }}" target="_blank" title="Source Code">Code</a> &middot;
-                <a href="{{ variant[1].source_url }}" target="_blank" title="Source Weights">Weights</a>
-              </td>
-              <td>{{ variant[1].license }}</td>
-            </tr>
-            {% endfor %}
-          {% endfor %}    </tbody>
-      </table>
-    </div>
+          {% endfor %}
+        {% endfor %}    </tbody>
+    </table>
   </div>
 </div>
 
@@ -93,7 +95,7 @@ For instructions on the latest models, visit our [Get Started](/get-started) pag
         if (!item) return;
         
         const chip = document.createElement("div");
-        chip.className = "chip" + (index === 0 ? " selected" : "");
+        chip.className = "option chip" + (index === 0 ? " selected" : "");
         chip.textContent = item.toUpperCase();
         chip.dataset.value = item;
         container.appendChild(chip);
@@ -143,6 +145,16 @@ For instructions on the latest models, visit our [Get Started](/get-started) pag
     setupChips("keypointsChips");
     setupChips("licenseChips");
 
+    function updateModelCount() {
+      const visibleModels = document.querySelectorAll(".model-card-container:not(.hidden)").length;
+      document.getElementById("modelCount").textContent = `Showing ${visibleModels} matching models`;
+    }
+
+    document.querySelectorAll(".chip-container").forEach(container => {
+      container.addEventListener("click", updateModelCount);
+    });
+
     filterModels();
+    updateModelCount();
   });
 </script>

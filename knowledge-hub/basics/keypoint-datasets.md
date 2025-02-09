@@ -24,8 +24,9 @@ To train on coco (single person pose estimation), place the following files in t
 Please edit `year = 2017; % 2014 or 2017 ` in [gen_coco.m](https://github.com/bearpaw/pytorch-pose/blob/master/miscs/gen_coco.m) to generate the corresponding annotation file (coco2014 or coco2017).
 
 
-<table class="table table-dark table-striped">
-    <thead>
+<div class="table-responsive">
+<table class="table table-striped">
+    <thead class="thead-dark">
         <tr>
             <th>Dataset</th>
             <th>Year</th>
@@ -191,6 +192,7 @@ Please edit `year = 2017; % 2014 or 2017 ` in [gen_coco.m](https://github.com/be
         </tr>
     </tbody>
 </table>
+</div>
 
 
 ### Types of Keypoints and Skeleton Variants
