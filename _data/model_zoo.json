@@ -1,8 +1,14 @@
 [
     {
         "name": "Lightweight Pose Network",
-        "description": "Simple and Lightweight Human Pose Estimation",
+        "description": "Recent research on human pose estimation has achieved significant improvement. However, most existing methods tend to pursue higher scores using complex architecture or computationally expensive models on benchmark datasets, ignoring the deployment costs in practice. In this paper, we investigate the problem of simple and lightweight human pose estimation. We first redesign a lightweight bottleneck block with two non-novel concepts: depthwise convolution and attention mechanism. And then, based on the lightweight block, we present a Lightweight Pose Network (LPN) following the architecture design principles of SimpleBaseline. The model size (#Params) of our small network LPN-50 is only 9% of SimpleBaseline(ResNet50), and the computational complexity (FLOPs) is only 11%. To give full play to the potential of our LPN and get more accurate predicted results, we also propose an iterative training strategy and a model-agnostic post-processing function Beta-Soft-Argmax. We empirically demonstrate the effectiveness and efficiency of our methods on the benchmark dataset: the COCO keypoint detection dataset. Besides, we show the speed superiority of our lightweight network at inference time on a non-GPU platform. Specifically, our LPN-50 can achieve 68.7 in AP score on the COCO test-dev set, with only 2.7M parameters and 1.0 GFLOPs, while the inference speed is 17 FPS on an Intel i7-8700K CPU machine.",
+        "pipeline": "Top-down",
+        "dimension": "2d",
+        "backbone": "ResNet + Lightweight Bottleneck Blocks",
+        "head": "Heatmap Regression",
         "paper": "https://arxiv.org/abs/1911.10346",
+        "authors": "Zhe Zhang, Jie Tang, Gangshan Wu",
+        "year": "2019",
         "type": "body2d",
         "variants": {
             "50": {
@@ -69,8 +75,14 @@
     },
     {
         "name": "BlazePose",
-        "description": "BlazePose is a lightweight model for human pose estimation tailored for real-time inference on mobile devices. It produces 33 body keypoints for a single person and runs at over 30 frames per second on a Pixel 2 phone.",
+        "description": "We present BlazePose, a lightweight convolutional neural network architecture for human pose estimation that is tailored for real-time inference on mobile devices. During inference, the network produces 33 body keypoints for a single person and runs at over 30 frames per second on a Pixel 2 phone. This makes it particularly suited to real-time use cases like fitness tracking and sign language recognition. Our main contributions include a novel body pose tracking solution and a lightweight body pose estimation neural network that uses both heatmaps and regression to keypoint coordinates.",
+        "pipeline": "Top-down",
+        "dimension": "3d",
+        "backbone": "1.5-Stage Tiny Hourglass",
+        "head": "Direct Keypoint Regression",
         "paper": "https://arxiv.org/abs/2006.10204",
+        "authors": "Valentin Bazarevsky, Ivan Grishchenko, Karthik Raveendran, Tyler Zhu, Fan Zhang, Matthias Grundmann",
+        "year": "2020",
         "type": "wholebody",
         "variants": {
             "lite": {
@@ -122,8 +134,14 @@
     },
     {
         "name": "RTMPose",
-        "description": "RTMPose is a real-time multi-person pose estimation model which uses a CSPNeXt backbone with a lightweight SimCC head.",
+        "description": "Recent studies on 2D pose estimation have achieved excellent performance on public benchmarks, yet its application in the industrial community still suffers from heavy model parameters and high latency. In order to bridge this gap, we empirically explore key factors in pose estimation including paradigm, model architecture, training strategy, and deployment, and present a high-performance real-time multi-person pose estimation framework, RTMPose, based on MMPose. Our RTMPose-m achieves 75.8% AP on COCO with 90+ FPS on an Intel i7-11700 CPU and 430+ FPS on an NVIDIA GTX 1660 Ti GPU, and RTMPose-l achieves 67.0% AP on COCO-WholeBody with 130+ FPS. To further evaluate RTMPose's capability in critical real-time applications, we also report the performance after deploying on the mobile device. Our RTMPose-s achieves 72.2% AP on COCO with 70+ FPS on a Snapdragon 865 chip, outperforming existing open-source libraries.",
+        "pipeline": "Top-down",
+        "dimension": "2d",
+        "backbone": "CSPNeXt",
+        "head": "Coordinate Classification",
         "paper": "https://arxiv.org/abs/2303.07399",
+        "authors": "Tao Jiang, Peng Lu, Li Zhang, Ningsheng Ma, Rui Han, Chengqi Lyu, Yining Li, Kai Chen",
+        "year": "2023",
         "type": "body2d",
         "variants": {
             "t": {
@@ -185,7 +203,21 @@
                 "source_url": "https://mmdeploy-oss.openmmlab.com/model/mmpose/rtmpose-l-059cd7.onnx",
                 "code": "https://github.com/open-mmlab/mmpose/blob/v1.0.0rc1/configs/body_2d_keypoint/rtmpose/coco/rtmpose-l_8xb256-420e_aic-coco-256x192.py",
                 "license": "Apache-2.0"
-            },
+            }
+        }
+    },
+    {
+        "name": "RTMW",
+        "description": "Whole-body pose estimation is a challenging task that requires simultaneous prediction of keypoints for the body, hands, face, and feet. Whole-body pose estimation aims to predict fine-grained pose information for the human body, including the face, torso, hands, and feet, which plays an important role in the study of human-centric perception and generation and in various applications. In this work, we present RTMW (Real-Time Multi-person Whole-body pose estimation models), a series of high-performance models for 2D/3D whole-body pose estimation. We incorporate RTMPose model architecture with FPN and HEM (Hierarchical Encoding Module) to better capture pose information from different body parts with various scales. The model is trained with a rich collection of open-source human keypoint datasets with manually aligned annotations and further enhanced via a two-stage distillation strategy. RTMW demonstrates strong performance on multiple whole-body pose estimation benchmarks while maintaining high inference efficiency and deployment friendliness. We release three sizes: m/l/x, with RTMW-l achieving a 70.2 mAP on the COCO-Wholebody benchmark, making it the first open-source model to exceed 70 mAP on this benchmark. Meanwhile, we explored the performance of RTMW in the task of 3D whole-body pose estimation, conducting image-based monocular 3D whole-body pose estimation in a coordinate classification manner. We hope this work can benefit both academic research and industrial applications.",
+        "pipeline": "Top-down",
+        "dimension": "2d",
+        "backbone": "CSPNeXt",
+        "head": "Coordinate Classification",
+        "paper": "https://arxiv.org/abs/2407.08634",
+        "authors": "Tao Jiang, Xinchen Xie, Yining Li",
+        "year": "2024",
+        "type": "wholebody",
+        "variants": {
             "wm": {
                 "name": "RTMW-m",
                 "input_size": [
@@ -207,6 +239,7 @@
         "name": "RTMDet",
         "description": "detectors_rtmdet-nano_coco-person_320x320",
         "paper": "https://arxiv.org/abs/2212.07784",
+        "year": "2022",
         "type": "detectors",
         "variants": {
             "nano": {
@@ -241,8 +274,13 @@
     },
     {
         "name": "MoveNet",
-        "description": "",
-        "paper": "https://arxiv.org/abs/1803.08225",
+        "description": "MoveNet is an ultra fast and accurate model that detects 17 keypoints of a body. The model is offered on TF Hub with two variants, known as Lightning and Thunder. Lightning is intended for latency-critical applications, while Thunder is intended for applications that require high accuracy. Both models run faster than real time (30+ FPS) on most modern desktops, laptops, and phones, which proves crucial for live fitness, sports, and health applications.",
+        "pipeline": "Bottom-up",
+        "dimension": "2d",
+        "backbone": "MobileNetV2 + FPN",
+        "head": "Person Center, Keypoint Heatmap, Keypoint Regression, and Offset Heads",
+        "paper": "https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html",
+        "year": "2021",
         "type": "body2d",
         "variants": {
             "lightning": {
@@ -338,9 +376,14 @@
         }
     },
     {
-        "name": "NASNet",
-        "description": "An efficient pose estimation model containing a NAS-searched backbone and a head with slim transposed convolutions and a spatial information correction module.",
+        "name": "EfficientPose with NAS",
+        "description": "Human pose estimation from image and video is a vital task in many multimedia applications. Previous methods achieve great performance but rarely take efficiency into consideration, which makes it difficult to implement the networks on resource-constrained devices. Nowadays real-time multimedia applications call for more efficient models for better interactions. Moreover, most deep neural networks for pose estimation directly reuse the networks designed for image classification as the backbone, which are not yet optimized for the pose estimation task. In this paper, we propose an efficient framework targeted at human pose estimation including two parts, the efficient backbone and the efficient head. By implementing the differentiable neural architecture search method, we customize the backbone network design for pose estimation and reduce the computation cost with negligible accuracy degradation. For the efficient head, we slim the transposed convolutions and propose a spatial information correction module to promote the performance of the final prediction. In experiments, we evaluate our networks on the MPII and COCO datasets. Our smallest model has only 0.65 GFLOPs with 88.1% PCKh@0.5 on MPII and our large model has only 2 GFLOPs while its accuracy is competitive with the state-of-the-art large model, i.e., HRNet with 9.5 GFLOPs.",
+        "pipeline": "Top-down",
+        "dimension": "2d",
+        "backbone": "NAS-Optimized Backbone",
+        "head": "Heatmap Regression",
         "paper": "https://arxiv.org/abs/2012.07086",
+        "year": "2020",
         "type": "body2d",
         "variants": {
             "a17": {
@@ -422,8 +465,13 @@
     },
     {
         "name": "SimCC",
-        "description": "SimCC: a Simple Coordinate Classification Perspective for Human Pose Estimation",
+        "description": "The 2D heatmap-based approaches have dominated Human Pose Estimation (HPE) for years due to high performance. However, the long-standing quantization error problem in the 2D heatmap-based methods leads to several well-known drawbacks: 1) The performance for the low-resolution inputs is limited; 2) To improve the feature map resolution for higher localization precision, multiple costly upsampling layers are required; 3) Extra post-processing is adopted to reduce the quantization error. To address these issues, we aim to explore a brand new scheme, called \textit{SimCC}, which reformulates HPE as two classification tasks for horizontal and vertical coordinates. The proposed SimCC uniformly divides each pixel into several bins, thus achieving sub-pixel localization precision and low quantization error. Benefiting from that, SimCC can omit additional refinement post-processing and exclude upsampling layers under certain settings, resulting in a more simple and effective pipeline for HPE. Extensive experiments conducted over COCO, CrowdPose, and MPII datasets show that SimCC outperforms heatmap-based counterparts, especially in low-resolution settings by a large margin.",
+        "pipeline": "Top-down",
+        "dimension": "2d",
+        "backbone": "ResNet, MobileNetV2, ViPNAS-MBV3",
+        "head": "Coordinate Classification",
         "paper": "https://arxiv.org/abs/2107.03332",
+        "year": "2021",
         "type": "body2d",
         "variants": {
             "mbv2": {
@@ -475,7 +523,11 @@
     },
     {
         "name": "EfficientPose",
-        "description": "A family of EfficientNet-based single-person pose estimation networks trained on MPII keypoints with different trade-offs between accuracy and efficiency.",
+        "description": "Single-person human pose estimation facilitates markerless movement analysis in sports, as well as in clinical applications. Still, state-of-the-art models for human pose estimation generally do not meet the requirements of real-life applications. The proliferation of deep learning techniques has resulted in the development of many advanced approaches. However, with the progresses in the field, more complex and inefficient models have also been introduced, which have caused tremendous increases in computational demands. To cope with these complexity and inefficiency challenges, we propose a novel convolutional neural network architecture, called EfficientPose, which exploits recently proposed EfficientNets in order to deliver efficient and scalable single-person pose estimation. EfficientPose is a family of models harnessing an effective multi-scale feature extractor and computationally efficient detection blocks using mobile inverted bottleneck convolutions, while at the same time ensuring that the precision of the pose configurations is still improved. Due to its low complexity and efficiency, EfficientPose enables real-world applications on edge devices by limiting the memory footprint and computational cost. The results from our experiments, using the challenging MPII single-person benchmark, show that the proposed EfficientPose models substantially outperform the widely-used OpenPose model both in terms of accuracy and computational efficiency. In particular, our top-performing model achieves state-of-the-art accuracy on single-person MPII, with low-complexity ConvNets.",
+        "pipeline": "Bottom-up",
+        "dimension": "2d",
+        "backbone": "EfficientNet",
+        "head": "Heatmap and Part Affinity Fields Regression",
         "paper": "https://arxiv.org/abs/2004.12186",
         "authors": "Daniel Groos, Heri Ramampiaro, Espen A. F. Ihlen",
         "year": "2020",

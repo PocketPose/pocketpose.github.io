@@ -1,30 +1,33 @@
 ---
-title: "🚀 PocketPose Model Zoo – Pre-Trained Models for Human Pose Estimation"
+title: "🚀 PocketPose Model Zoo – Free Pre-Trained Models for Human Pose Estimation"
 layout: page
-description: "Explore PocketPose Model Zoo – a collection of pre-trained models for human pose estimation optimized for various frameworks and keypoint formats. Perfect for developers and researchers looking to accelerate their pose estimation projects."
+description: "Explore the PocketPose Model Zoo – a comprehensive collection of free, high-performance pre-trained models for 2D and 3D human pose estimation. Optimized for various frameworks and keypoint formats, our models help developers and researchers accelerate pose estimation projects with ease."
+keywords: "human pose estimation, pose estimation models, pre-trained pose estimation models, 2D pose estimation, 3D pose estimation, deep learning pose estimation, skeleton tracking, keypoint detection, pose estimation AI, open-source pose models, PocketPose models"
 permalink: "/models/"
 ---
 
-The __PocketPose Model Zoo__ is your go-to resource for __pre-trained models__ designed for fast, accurate, and efficient __human pose estimation__ across different frameworks and keypoint formats. Whether you’re building real-time applications or conducting advanced research, our models help you __accelerate development__ and __improve accuracy__ without the heavy lifting of training from scratch.
+Welcome to the **PocketPose Model Zoo**, your ultimate resource for **pre-trained models** designed for **fast, accurate, and efficient human pose estimation** across a variety of **frameworks and keypoint formats**. Whether you're building **real-time applications** or conducting **cutting-edge research**, our models provide **high-performance solutions** without the hassle of training from scratch.  
 
-For instructions on the latest models, visit our [Get Started](/get-started) page. 
+For minimal setup with automatic selection of the best model for your use case, visit our [Get Started](/get-started) page.
 
-__For Researchers &amp; Developers:__ In addition to our latest high-performance models, we provide access to __legacy pose estimation models__ that have played a pivotal role in the evolution of the field. While these models may not be optimized for speed or accuracy, they remain valuable for __comparative research, benchmarking, and academic exploration__.
+__For Researchers &amp; Developers:__ Alongside the latest **high-performance pose estimation models**, we provide access to **legacy models** that played a pivotal role in shaping the field. These older models are ideal for __comparative research, benchmarking, and academic exploration__.
 {: .note}
 
-## Model Explorer
-
-If you’re looking for a specific model for research or development, use the filters below to find the right model for your needs.
+Use our interactive **Model Explorer** below to filter and discover all available models in the PocketPose Model Zoo.  
 
 <div class="container model-selector filter-container">
   <!-- Dropdowns for Filtering -->
   <div class="row px-2">
-    <label class="selector-header">Backend:</label>
-    <div id="frameworkChips" class="options-grid chip-container"></div>
+    <label class="selector-header">Pipeline:</label>
+    <div id="pipelineChips" class="options-grid chip-container"></div>
   </div>
   <div class="row px-2">
     <label class="selector-header">Skeleton:</label>
     <div id="keypointsChips" class="options-grid chip-container"></div>
+  </div>
+  <div class="row px-2">
+    <label class="selector-header">Backend:</label>
+    <div id="frameworkChips" class="options-grid chip-container"></div>
   </div>
   <div class="row px-2">
     <label class="selector-header">License:</label>
@@ -35,58 +38,92 @@ If you’re looking for a specific model for research or development, use the fi
   <div id="modelContainer" class="table-responsive">
     <table class="table table-bordered table-striped">
       <caption>
-        <span id="modelCount" style="font-weight: bold;"></span>
+        <div id="modelCount" style="font-weight: bold;"></div>
+        <div>* Reported Metrics: COCO AP for 2D models using COCO/COCO-WholeBody keypoints, PCKh for 2D models with MPII keypoints, and MPJPE for 3D models. Metrics are evaluated on validation datasets using the same person detector (RTMDet) where applicable. Higher values indicate better performance.
+        </div> 
+        <div>** Speed: Measured on a 2024 MacBook Pro 14” (M4 Pro) using ONNX Runtime. Lower values indicate better performance.</div>
       </caption>
       <thead class="thead-dark">
         <tr>
           <th>Name</th>
           <th>Input Size</th>
           <th>Keypoints</th>
-          <th>Format</th>
-          <!-- <th>Download</th> -->
+          <th>Size (MB)</th>
+          <th>Accuracy*</th>
+          <th>Speed (FPS)**</th>
+          <th>Backend</th>
           <th>Source</th>
           <th>License</th>
         </tr>
       </thead>
       <tbody>
-        {% assign sorted_models = site.data.model_zoo | sort: "name" %}
+        {% assign sorted_models = site.data.model_zoo | sort: "year" | reverse %}
         {% for model in sorted_models %}
+          {% if model.type == "detectors" %}
+            {% continue %}
+          {% endif %}
+          <tr class="model-card-header" data-group="{{ model.name }}">
+            <td colspan="9" style="text-align: center;">
+              <b><a href="{{ model.paper }}" target="_blank">{{ model.name }}</a> ({{ model.year }})</b> <br>
+              {{ model.pipeline }} <b>|</b> {{ model.backbone }} <b>|</b> {{ model.head }}
+            </td>
+          </tr>
           {% for variant in model.variants %}
-          <tr class="model-card-container" data-framework="{{ variant[1].format }}" data-keypoints="{{ variant[1].keypoints }}">
+          <tr class="model-card-container" data-group="{{ model.name }}"
+            data-pipeline="{{ model.pipeline }}"
+            data-keypoints="{{ variant[1].keypoints }}"
+            data-framework="{{ variant[1].format }}" 
+            data-license="{{ variant[1].license }}">
             <td>{{ variant[1].name }}</td>
             <td>{{ variant[1].input_size | join: 'x' }}</td>
             <td>{{ variant[1].keypoints | upcase }}</td>
+            <td>{{ variant[1].file_size }}</td>
+            <td>{{ variant[1].performance }}</td>
+            <td>{{ variant[1].latency }}</td>
             <td>{{ variant[1].format | upcase }}</td>
-            <!-- <td><a href="{{ variant[1].url }}" class="btn btn-primary" title="Download"><i class="fa-solid fa-cloud-arrow-down"></i></a></td> -->
             <td>
+              {{variant[1].source}}:
+              {% if variant[1].code != "" %}
               <a href="{{ variant[1].code }}" target="_blank" title="Source Code">Code</a> &middot;
-              <a href="{{ variant[1].source_url }}" target="_blank" title="Source Weights">Weights</a>
+              {% endif %}
+              <a href="{{ variant[1].source_url }}" target="_blank" title="Original Weights">Weights</a>
             </td>
             <td>{{ variant[1].license }}</td>
           </tr>
           {% endfor %}
-        {% endfor %}    </tbody>
+        {% endfor %}    
+      </tbody>
     </table>
   </div>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const frameworkSelect = document.getElementById("frameworkSelect");
+    const pipelineSelect = document.getElementById("pipelineSelect");
     const keypointsSelect = document.getElementById("keypointsSelect");
+    const frameworkSelect = document.getElementById("frameworkSelect");
     const licenseSelect = document.getElementById("licenseSelect");
+
     const modelContainers = document.querySelectorAll(".model-card-container");
 
     // Extract unique framework formats and keypoints
+    let pipelines = new Set();
     let frameworks = new Set();
     let keypoints = new Set();
     let licenses = new Set();
 
     modelContainers.forEach(card => {
+      pipelines.add(card.dataset.pipeline);
       frameworks.add(card.dataset.framework);
       keypoints.add(card.dataset.keypoints);
       licenses.add(card.querySelector("td:last-child").textContent);
     });
+
+    // Sort sets to ensure consistent order
+    pipelines = Array.from(pipelines).sort();
+    frameworks = Array.from(frameworks).sort();
+    keypoints = Array.from(keypoints).sort();
+    licenses = Array.from(licenses).sort();
 
     function createChips(containerId, items) {
       const container = document.getElementById(containerId);
@@ -95,35 +132,55 @@ If you’re looking for a specific model for research or development, use the fi
         if (!item) return;
         
         const chip = document.createElement("div");
-        chip.className = "option chip" + (index === 0 ? " selected" : "");
+        chip.className = "option chip"; // + (index === 0 ? " selected" : "");
         chip.textContent = item.toUpperCase();
         chip.dataset.value = item;
         container.appendChild(chip);
       });
     }
 
+    createChips("pipelineChips", pipelines);
     createChips("frameworkChips", frameworks);
     createChips("keypointsChips", keypoints);
     createChips("licenseChips", licenses);
 
     // Filter models based on selections
     function filterModels() {
+      const selectedPipeline = document.querySelector("#pipelineChips .selected")?.dataset.value;
       const selectedFramework = document.querySelector("#frameworkChips .selected")?.dataset.value;
       const selectedKeypoints = document.querySelector("#keypointsChips .selected")?.dataset.value;
       const selectedLicense = document.querySelector("#licenseChips .selected")?.dataset.value;
 
-      console.log(selectedFramework, selectedKeypoints, selectedLicense);
-      modelContainers.forEach(card => {
+      let visibleModels = 0; // Counter for the number of visible model variants
+
+      document.querySelectorAll(".model-card-container").forEach(card => {
+        const matchesPipeline = !selectedPipeline || card.dataset.pipeline === selectedPipeline;
         const matchesFramework = !selectedFramework || card.dataset.framework === selectedFramework;
         const matchesKeypoints = !selectedKeypoints || card.dataset.keypoints === selectedKeypoints;
-        const matchesLicense = !selectedLicense || card.querySelector("td:last-child").textContent === selectedLicense;
+        const matchesLicense = !selectedLicense || card.dataset.license === selectedLicense;
 
-        if (matchesFramework && matchesKeypoints && matchesLicense) {
+        if (matchesPipeline && matchesFramework && matchesKeypoints && matchesLicense) {
           card.classList.remove("hidden");
+          visibleModels++;
         } else {
           card.classList.add("hidden");
         }
       });
+
+      // Hide group headers when all their variants are hidden
+      document.querySelectorAll(`.model-card-header`).forEach(group => {
+        const groupName = group.dataset.group;
+        const groupModels = document.querySelectorAll(`.model-card-container[data-group="${groupName}"]:not(.hidden)`);
+
+        if (groupModels.length === 0) {
+          group.classList.add("hidden");
+        } else {
+          group.classList.remove("hidden");
+        }
+      });
+
+      // Update model count
+      document.getElementById("modelCount").textContent = `Showing ${visibleModels} matching models`;
     }
 
     // Setup chip selection
@@ -141,20 +198,11 @@ If you’re looking for a specific model for research or development, use the fi
       });
     }
 
+    setupChips("pipelineChips");
     setupChips("frameworkChips");
     setupChips("keypointsChips");
     setupChips("licenseChips");
 
-    function updateModelCount() {
-      const visibleModels = document.querySelectorAll(".model-card-container:not(.hidden)").length;
-      document.getElementById("modelCount").textContent = `Showing ${visibleModels} matching models`;
-    }
-
-    document.querySelectorAll(".chip-container").forEach(container => {
-      container.addEventListener("click", updateModelCount);
-    });
-
     filterModels();
-    updateModelCount();
   });
 </script>
